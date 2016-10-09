@@ -48,7 +48,7 @@ mount -t iso9660 /dev/cdrom /mnt/
   <role rolename="manager-gui"/>
   <user username="admin" password="admin888" roles="manager-gui"/>
 </tomcat-users>
-====ssh登陆错误：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!====
+==★★==ssh登陆错误：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!==★★==
 rm -rf ~/.ssh/known_hosts  
 删除 known_hosts里面关于192.1xx.xxx.xxx服务器的信息，保存退出即可。
 
