@@ -1,0 +1,219 @@
+demo2014wsryl)ve
+Windows 10 Pro OEM:DM Permanent active key
+( OEM厂商:DM Windows 10 专业版永久激活密钥):
+N24DD-FGXK3-2RWYX-6D87B-HT672   //可用
+
+win10专业版：密钥  vk7jg-nphtm-c97jm-9mpgt-3v66t    cherry   RK 机械键盘
+Windows 2003 servr序列号:
+JK6JC-P7P7H-4HRFC-3XM7P-G33HM
+JCGMJ-TC669-KCBG7-HB8X2-FXG7M
+navicat 11.1.13  //不可注册
+windows server backup    goodsync
+/etc/sysconfig/network  //修改hostname
+ansible  自动化运维工具
+================
+计算机意外地重启遇到问题
+shift+f10打开命令窗口，进入到c:\windows\system32\oobe
+输入:msoobe 即可进行下一步操作 重启系统。
+====================
+卸载mysql
+yum -y remove mysql*
+=================
+
+===使用rzsz命令传输文件===
+yum install -y lrzsz  //安装rzsz
+
+
+====putty连接opensuse====
+/etc/init.d/SuSEfirewall2_init stop
+/etc/init.d/SuSEfirewall2_setup stop
+/etc/ssh/sshd_config
+PasswordAuthentication no¸ yes
+service sshd restart 
+SecureCRT of PuTTY
+
+==★★==opensuse mysql数据库设置==★★==
+systemctl enable mysqld   开机运行服务
+systemctl disable mysqld  取消开机运行
+systemctl start mysqld    启动服务
+systemctl stop mysqld     启动服务
+
+==★★==挂载光盘==★★==
+
+mount -t iso9660 /dev/cdrom /mnt/
+
+==★★==tomcat验证信息==★★==
+<tomcat-users>
+  <role rolename="manager-gui"/>
+  <user username="admin" password="admin888" roles="manager-gui"/>
+</tomcat-users>
+====ssh登陆错误：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!====
+rm -rf ~/.ssh/known_hosts  
+删除 known_hosts里面关于192.1xx.xxx.xxx服务器的信息，保存退出即可。
+
+==★★==web文件管理程序==★★==
+http://www.oschina.net/project/tag/193/filemanager?lang=22&os=0&sort=time&p=2
+http://www.chinaz.com/web/2015/0127/380865.shtml
+
+====查看swap分区
+free -m  &  fdisk -l 
+====linux登陆显示module is unknown=====
+# cd /var/log/
+#cat security 
+在日志文件中，我看到了如下信息：
+PAM unable to dlopen(/lib/security/pam_limits.so)
+PAM [error: /lib/security/pam_limits.so: wrong ELF class: ELFCLASS32]
+PAM adding faulty module: /lib/security/pam_limits.so
+pam_unix(login:session): session opened for user Oracle by LOGIN(uid=0)
+Module is unknown
+看到这里，我想起我在/etc/pam.d/login中加入了:
+session required /lib/security/pam_limits.so
+session required pam_limits.so
+两条配置语句。根据日志信息以上Login上的其他配置信息，将第一条语句注释掉：
+#session required /lib/security/pam_limits.so
+session required pam_limits.so
+重启，登录，一切正常。问题解决》
+########################更新##########################33
+以上问题的出现是由于操作系统的问题。我本想安装32位centos，结果错手拿了一个64bit Centos安装，然后按照32位的配置进行了配置。正确配置在64位下应为：
+   1:  session required /lib64/security/pam_limits.so
+   2:   
+   3:  session required pam_limits.so
+=====CentOS7 安装Docker=====
+CentOS7 安装Docker报错 Transaction check error:
+yum install libdevmapper* -y
+yum install docker
+===============
+Cannot connect to the Docker daemon
+service docker start  
+=★=centos 7防火墙配置==★==
+firewall-cmd --state    //查看防火墙状态
+systemctlrestart iptables.service    
+systemctlenable iptables.service   
+==ubuntu版本升级=========
+$ sudo update-manager -d
+========ubuntu版本信息
+cat /etc/issue
+================
+192.168.216.136  SG6CIHW5FK32HHC
+192.168.216.134  033GX4YM625V76X
+==★==lsattr命令参数==★==
+# chattr +i .bash_logout     //添加一个隐藏的“i”属性，后面再细讲
+#lsattr -a 　　　　　　　　 //将当前目录的文件或目录下的文件所有属性(包括隐藏属性)列出　
+-------------- ./. 
+-------------- ./.. 
+---i---------- ./.bash_logout 
+-------------- ./.bash_profile 
+-------------- ./.bashrc 
+#chattr +i  /etc/shadow    //添加“i”隐藏属性后，就无法更动这个文件了
+#chattr -i  /etc/shadow     //解除“”隐藏属性
+==★★==查看ping命令在哪个目录下==★★==
+# which ping    // 查看ping命令
+   /bin/ping       //显示所在目录
+# rpm -qf    /bin/ping   //查看ping命令是哪个包提供的
+===修改vim注释的颜色===
+/etc/vim/vimrcÖÐÔö¼ÓÈçÏÂÒ»¾ä:
+highlight Comment ctermfg=green guifg=green
+or
+hi Comment ctermfg=red
+or
+hi Comment ctermfg=darkred
+==¡ï=Òþ²Ønginx°æ±¾ºÅÐÅÏ¢=¡ï==
+´ò¿ªnginxÅäÖÃÎÄ¼þ
+# vim nginx.conf
+	
+ÔÚhttp {¡ª}Àï¼ÓÉÏserver_tokens off; Èç£º
+http {
+¡­¡­Ê¡ÂÔ
+sendfile on;
+tcp_nopush on;
+keepalive_timeout 60;
+tcp_nodelay on;
+server_tokens off;
+¡­¡­.Ê¡ÂÔ
+}
+2.±à¼­php-fpmÅäÖÃÎÄ¼þ£¬Èçfastcgi.conf»òfcgi.conf£¨Õâ¸öÅäÖÃÎÄ¼þÃûÒ²¿ÉÒÔ×Ô¶¨ÒåµÄ£¬¸ù¾Ý¾ßÌåÎÄ¼þÃûÐÞ¸Ä£©£º
+ÕÒµ½£º
+fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;
+¸ÄÎª£º
+fastcgi_param SERVER_SOFTWARE nginx;
+# /etc/init.d/nginx reload
+===========配置win2008防火墙 允许被Ping的设置方法
+netsh firewall set icmpsetting 8                可以ping
+netsh firewall set icmpsetting 8 disable    禁止ping
+===========卸载系统自带JDK
+# java -version   查看jdk版本
+#rpm -qa | grep gcj
+libgcj-4.1.2-44.el5
+java-1.4.2-gcj-compat-1.4.2.0-40jpp.115
+#rpm -e --nodeps java-1.4.2-gcj-compat-1.4.2.0-40jpp.115
+#rpm -qa|grep jdk
+java-1.6.0-openjdk-1.6.0.0-0.25.b09.el5
+jdk-1.6.0_16-fcs
+#rpm -e --nodeps jdk-1.6.0_16-fcs
+============win7命令行关机
+shutdown -s -t 0  关机 
+shutdown –a  取消关机
+shutdown -r -t 0   重启
+==★==linux下查看网关的命令==★==
+linux下查看网关的命令
+1.cat /etc/resolv.conf （看DNS）
+2.netstat –r
+3.cat /etc/sysconfig/network（Ubuntu10.04不行）
+4.cat /etc/sysconfig/network-scripts/ifcfg-eth0（Ubuntu10.04不行）5.traceroute 第一行就是自己的网关
+6.ip route show
+7.route -n
+以上几个是比较常用的查询网关的命令
+
+=★=安装oracle10g 出现程序异常终止 发生内部错误 =★=
+首先、确保你有该文件夹的完全控制权。（修改：文件夹点右键 属性-〉安全-〉高级-〉所有者-〉改为自己。
+接着编辑自己的权限为完全控制）
+其次、将setup.exe的兼容性改为windows server 2003(server pack 1)。就是右键属性-〉兼容性-〉兼容模式中。
+接着、右键，以管理员身份运行。
+最后、会出现兼容性问题的提示框。选择运行程序。
+
+ 错误 
+ java.lang.Exception: Exception in sending Request :: null 
+
+==★★=安装oracle10g时提示：检查操作系统版本: 必须是5.1 or 5.2。实际为 6.1未通过=★★==
+ 解决方案
+ 找到 C:\database\install\oraparam   文件
+这里只认证5.1、5.2的OS版本，但是我的win server 2008系统版本为6.1，
+[Certified Versions]参数修改为：
+ [Certified Versions]
+#You can customise error message shown for failure, provide value for CERTIFIED_VERSION_FAILURE_MESSAGE
+Windows=5.1,5.2,6.1
+并且在其下方合适的位置加上如下参数：
+ [Windows-6.1-required]
+#Minimum display colours for OUI to run
+MIN_DISPLAY_COLORS=256
+#Minimum CPU speed required for OUI
+#CPU=300
+[Windows-6.1-optional]
+保存，退出，重新安装，验证通过，问题解决。
+
+1.上午和罗艳军到煤气化部署项目。
+2.机房服务器安装oracle数据库。
+=★★=添加端口=★★=
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8140 -j ACCEPT
+
+==▼▼=CentOS7修改服务器主机名方法 =▼▼==
+CentOS7下修改主机名
+第一种：hostname 主机名
+01.hostname 主机名称 
+这种方式，只能修改临时的主机名，当重启机器后，主机名称又变回来了。
+
+第二种：hostnamectl set-hostname <hostname>
+命令行中输入
+01.hostnamectl set-hostname <主机名> 
+使用这种方式修改，可以永久性的修改主机名称！
+
+==▼▼==mongodb 32bit机器 启动出错 ==▼▼==3.2.9
+2016-09-29T14:43:58.491+0800 I STORAGE  [initandlisten] exception in initAndList
+en: 28663 Cannot start server. The default storage engine 'wiredTiger' is not av
+ailable with this build of mongod. Please specify a different storage engine exp
+licitly, e.g. --storageEngine=mmapv1., terminating
+解决方法：
+D:\Program Files\MongoDB\Server\3.2\bin>mongod --dbpath D:\mongodb\data  --storageEngine=mmapv1
+
+1.虚拟机上安装mongodb数据库，供测试学习。
+2.
