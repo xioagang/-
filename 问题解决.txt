@@ -11,11 +11,12 @@ navicat 11.1.13  //不可注册
 windows server backup    goodsync
 /etc/sysconfig/network  //修改hostname
 ansible  自动化运维工具
-================
-计算机意外地重启遇到问题
+
+==★★==计算机意外地重启遇到问题==★★==
 shift+f10打开命令窗口，进入到c:\windows\system32\oobe
 输入:msoobe 即可进行下一步操作 重启系统。
-====================
+
+==★★==卸载mysql==★★==
 卸载mysql
 yum -y remove mysql*
 =================
@@ -24,7 +25,7 @@ yum -y remove mysql*
 yum install -y lrzsz  //安装rzsz
 
 
-====putty连接opensuse====
+==★★==putty连接opensuse==★★==
 /etc/init.d/SuSEfirewall2_init stop
 /etc/init.d/SuSEfirewall2_setup stop
 /etc/ssh/sshd_config
@@ -55,9 +56,9 @@ rm -rf ~/.ssh/known_hosts
 http://www.oschina.net/project/tag/193/filemanager?lang=22&os=0&sort=time&p=2
 http://www.chinaz.com/web/2015/0127/380865.shtml
 
-====查看swap分区
+==★★==查看swap分区==★★==
 free -m  &  fdisk -l 
-====linux登陆显示module is unknown=====
+==★★==linux登陆显示module is unknown==★★==
 # cd /var/log/
 #cat security 
 在日志文件中，我看到了如下信息：
@@ -78,7 +79,7 @@ session required pam_limits.so
    1:  session required /lib64/security/pam_limits.so
    2:   
    3:  session required pam_limits.so
-=====CentOS7 安装Docker=====
+==★★==CentOS7 安装Docker==★★==
 CentOS7 安装Docker报错 Transaction check error:
 yum install libdevmapper* -y
 yum install docker
@@ -91,7 +92,7 @@ systemctlrestart iptables.service
 systemctlenable iptables.service   
 ==ubuntu版本升级=========
 $ sudo update-manager -d
-========ubuntu版本信息
+==★★==ubuntu版本信息==★★==
 cat /etc/issue
 ================
 192.168.216.136  SG6CIHW5FK32HHC
@@ -137,10 +138,10 @@ fastcgi_param SERVER_SOFTWARE nginx/$nginx_version;
 ¸ÄÎª£º
 fastcgi_param SERVER_SOFTWARE nginx;
 # /etc/init.d/nginx reload
-===========配置win2008防火墙 允许被Ping的设置方法
+==★★==配置win2008防火墙 允许被Ping的设置方法==★★==
 netsh firewall set icmpsetting 8                可以ping
 netsh firewall set icmpsetting 8 disable    禁止ping
-===========卸载系统自带JDK
+==★★==卸载系统自带JDK==★★==
 # java -version   查看jdk版本
 #rpm -qa | grep gcj
 libgcj-4.1.2-44.el5
@@ -215,5 +216,3 @@ licitly, e.g. --storageEngine=mmapv1., terminating
 解决方法：
 D:\Program Files\MongoDB\Server\3.2\bin>mongod --dbpath D:\mongodb\data  --storageEngine=mmapv1
 
-1.虚拟机上安装mongodb数据库，供测试学习。
-2.
